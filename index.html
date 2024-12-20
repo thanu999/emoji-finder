@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Initial Welcome Page -->
+    <div class="container" id="welcomeContainer">
+        <h1>Express Your Mood</h1>
+        <button class="start-btn" onclick="startNewSession()">Start Here</button>
+    </div>
+
+    <!-- Name Input Page -->
+    <div class="container" id="nameContainer" style="display: none;">
+        <h1>Welcome!</h1>
+        <div class="name-input">
+            <input type="text" id="nameInput" placeholder="Enter your name...">
+            <button onclick="processName()">Let's Begin</button>
+        </div>
+    </div>
+
+    <!-- Mood Selection Page -->
+    <div class="container" id="moodContainer" style="display: none;">
+        <h1>Hey <span id="userName"></span>!</h1>
+        <h2>How are you feeling today?</h2>
+        
+        <!-- Mood Options -->
+        <div class="mood-options">
+            <button class="mood-btn" onclick="selectMood('happy')">😊 Happy</button>
+            <button class="mood-btn" onclick="selectMood('sad')">😢 Sad</button>
+            <button class="mood-btn" onclick="selectMood('angry')">😠 Angry</button>
+            <button class="mood-btn" onclick="selectMood('excited')">🎉 Excited</button>
+            <button class="mood-btn" onclick="selectMood('tired')">😴 Tired</button>
+            <button class="mood-btn" onclick="selectMood('peaceful')">😌 Peaceful</button>
+        </div>
+
+        <div class="divider">
+            <span>OR</span>
+        </div>
+
+        <div class="mood-input">
+            <input type="text" id="moodInput" placeholder="Tell me how you're feeling...">
+            <button onclick="processCustomMood()">Show Me!</button>
+        </div>
+    </div>
+
+    <!-- Result Display -->
+    <div class="container" id="resultContainer" style="display: none;">
+        <div id="emojiDisplay"></div>
+        <p id="quoteDisplay"></p>
+        <div class="button-group">
+            <button onclick="tryAnotherMood()">Try Another Mood</button>
+            <button onclick="startNewSession()">New User</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
